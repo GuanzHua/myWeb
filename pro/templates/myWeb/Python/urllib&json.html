@@ -1,0 +1,176 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<title>Guanzh</title>
+		<link rel="icon" href="http://198.13.39.141/images/head.jpg" type="image/x-icon"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'myWeb/css/main.css' %}">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'myWeb/css/monokai-sublime.css' %}">
+  </head>
+
+
+  <body class="app sidebar-mini rtl">
+    <!-- Navbar-->
+    <header class="app-header"><a class="app-header__logo" href="{% url 'myWeb:index' %}">Guanzh</a>
+      <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+      <!-- Navbar Right Menu-->
+      <ul class="app-nav">
+        <li class="app-search">
+          <input class="app-search__input" type="search" placeholder="Search">
+          <button class="app-search__button"><i class="fa fa-search"></i></button>
+        </li>
+
+        <!-- User Menu-->
+        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <li><a class="dropdown-item" href="{% url 'myWeb:admin' %}"><i class="fa fa-cog fa-lg"></i> 后台登录</a></li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+
+
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+      <div class="app-sidebar__user">
+      	<a href="#"><img class="app-sidebar__user-avatar" src="http://198.13.39.141/images/head.jpg" alt="User Image"></a>
+        <div>
+          <p class="app-sidebar__user-name"><a class="username" href="#">Guanzh</a></p>
+          <p class="app-sidebar__user-designation">一个快乐的沙雕青年。</p>
+        </div>
+      </div>
+      <ul class="app-menu">
+        <li><a class="app-menu__item" href="{% url 'myWeb:index' %}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">首页</span></a></li>
+        <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Python语言基础</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="{% url 'myWeb:first_python' %}"><i class="icon fa fa-circle-o"></i> 第一个Python程序与数据存储</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:variable_operator' %}"><i class="icon fa fa-circle-o"></i> print、input、变量和运算符</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:string_while' %}"><i class="icon fa fa-circle-o"></i> 字符串与循环中的while</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:boolean_list_trutle' %}"><i class="icon fa fa-circle-o"></i> 布尔值、List、条件循环语句与trutle</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:tuple_string_dict' %}"><i class="icon fa fa-circle-o"></i> 元组、字符串和字典</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:function' %}"><i class="icon fa fa-circle-o"></i> 函数基础</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:decorator_partial_function' %}"><i class="icon fa fa-circle-o"></i> 装饰器、偏函数、作用域、异常处理与文件读写</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:os_windows' %}"><i class="icon fa fa-circle-o"></i> OS模块、窗口控制、内存修改与语音</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:recursion_time' %}"><i class="icon fa fa-circle-o"></i> 递归与时间相关模块</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:modular_object_oriented' %}"><i class="icon fa fa-circle-o"></i> 模块的使用与面向对象思想简介</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:object_oriented' %}"><i class="icon fa fa-circle-o"></i> 面向对象思想的编程</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:object_oriented_email' %}"><i class="icon fa fa-circle-o"></i> 面向对象提升与收发邮件</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:tkinter_1' %}"><i class="icon fa fa-circle-o"></i> Tkinter与简易银行系统实战</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:tkinter_2' %}"><i class="icon fa fa-circle-o"></i> Tkinter</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:automated_office' %}"><i class="icon fa fa-circle-o"></i> 自动化办公与鼠标键盘模拟</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:py2_py3_test' %}"><i class="icon fa fa-circle-o"></i> python2与python3的区别和测试</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:regular_expression' %}"><i class="icon fa fa-circle-o"></i> 正则表达式</a></li>
+            <li><a class="treeview-item active" href="{% url 'myWeb:urllib_json' %}"><i class="icon fa fa-circle-o"></i> 爬虫简介与Json</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:network_program' %}"><i class="icon fa fa-circle-o"></i> 网络编程</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:process' %}"><i class="icon fa fa-circle-o"></i> 进程与线程</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:thread_coroutine' %}"><i class="icon fa fa-circle-o"></i> 线程与协程</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:mysql' %}"><i class="icon fa fa-circle-o"></i> Mysql</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:mongodb_redis' %}"><i class="icon fa fa-circle-o"></i> Mongodb与Redis</a></li>
+          </ul>
+        </li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label"> 前端基础</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="{% url 'myWeb:HTML_CSS_base' %}"><i class="icon fa fa-circle-o"></i> HTML与CSS基础</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:HTML_CSS_promote' %}"><i class="icon fa fa-circle-o"></i> HTML与CSS提升</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:JavaScript_base' %}"><i class="icon fa fa-circle-o"></i> JavaScript基础</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:JavaScript_promote' %}"><i class="icon fa fa-circle-o"></i> JavaScript提升</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:jQuery_base' %}"><i class="icon fa fa-circle-o"></i> JQuery基础</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:jQuery_promote' %}"><i class="icon fa fa-circle-o"></i> JQuery提升</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:H5C3_base' %}"><i class="icon fa fa-circle-o"></i> HTML5与CSS3基础</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:H5C3_promote' %}"><i class="icon fa fa-circle-o"></i> HTML5与CSS3提升</a></li>
+          </ul>
+        </li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label"> Django</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="{% url 'myWeb:Django_BaseProcess' %}"><i class="icon fa fa-circle-o"></i> Django基本流程</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:Django_Model' %}"><i class="icon fa fa-circle-o"></i> Django中的模型</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:Django_Views' %}"><i class="icon fa fa-circle-o"></i> Django中的视图</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:Django_Template' %}"><i class="icon fa fa-circle-o"></i> Django中的模板</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:Django_Senior' %}"><i class="icon fa fa-circle-o"></i> Django的高级使用</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:GitHub' %}"><i class="icon fa fa-circle-o"></i> GitHub的使用</a></li>
+          </ul>
+        </li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">Tornado</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="{% url 'myWeb:Tornado_base' %}"><i class="icon fa fa-circle-o"></i> Tornado基础流程</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:Request_Response' %}"><i class="icon fa fa-circle-o"></i> 请求与响应</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:Template_Database_Sequence' %}"><i class="icon fa fa-circle-o"></i> 模板和数据库以及接口的调用顺序</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:Application_Security' %}"><i class="icon fa fa-circle-o"></i> 应用安全</a></li>
+            <li><a class="treeview-item" href="{% url 'myWeb:Synchronization_Asynchronization_WebSocket' %}"><i class="icon fa fa-circle-o"></i> 同步与异步 + 使用WebSocket实现在线聊天</a></li>
+          </ul>
+        </li>
+        <li><a class="app-menu__item" target="_blank" href="https://github.com/GuanzHua/myWeb"><i class="app-menu__icon fa fa-github"></i><span class="app-menu__label"> GitHub源码</span></a></li>
+      </ul>
+    </aside>
+    <main class="app-content">
+      <div class="app-title">
+        <div class="div">
+          <h1><i class="fa fa-laptop"></i> Python</h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item">Python</li>
+          <li class="breadcrumb-item"><a href="#">{{catalog.remark_id}}</a></li>
+        </ul>
+      </div>
+
+
+
+      <!-- Main-->
+      {% for item in items %}
+      <div class="tile mb-4">
+        <div class="page-header">
+          <div class="row">
+            <div class="col-lg-12">
+              <h3 class="mb-3 line-head">{{item.title}}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <embed class="mb-3 pdf" src="{{item.pdf}}"></embed>
+            <img class="mb-3 images" src="{{item.images}}" />
+            {% if item.code == None %}
+              <code class=" mb-3 python"></code>
+            {% else %}
+              <pre>
+                <code class="mb-3 python">{{item.getcode}}</code>
+              </pre>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </main>
+    <!-- Essential javascripts for application to work-->
+    <script src="{% static 'myWeb/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'myWeb/js/popper.min.js' %}"></script>
+    <script src="{% static 'myWeb/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'myWeb/js/main.js' %}"></script>
+    <script src="{% static 'myWeb/js/backtop.js' %}"></script>
+    <script src="{% static 'myWeb/js/highlight.pack.js' %}"></script>
+
+    <!--隐藏数据库中路径为空的图片和pdf-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('img, embed').each(function () {
+                if($(this).attr('src')=="None") {
+                    $(this).css("display","none")
+                }
+            });
+        });
+    </script>
+
+    <!--代码高亮插件-->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
+</html>
